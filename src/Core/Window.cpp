@@ -1,7 +1,7 @@
 #include <Core/Window.h>
 
 namespace MViz {
-	Window::Window(int width, int height, const char * title) {
+	Window::Window(float width, float height, const char * title) {
 		glfwInit();
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);

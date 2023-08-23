@@ -1,7 +1,7 @@
 #include "Renderer.h"
 
 namespace MViz {
-	void Renderer::RenderText(MViz::Font& font, MViz::Shader& shader, MViz::VA & VAO, std::string text, float x, float y, float scale, glm::vec3 color) {
+	void RenderText(MViz::Font& font, MViz::Shader& shader, MViz::VA & VAO, std::string text, float x, float y, float scale, glm::vec3 color) {
 		shader.Use();
 		glUniform3f(glGetUniformLocation(shader.GetProgramID(), "textColor"), color.x, color.y, color.z);
 		glActiveTexture(GL_TEXTURE0);
@@ -41,11 +41,18 @@ namespace MViz {
 
 	}
 
-	void Renderer::RenderQuad(MViz::Shader& shader, MViz::VA& VAO) {
+	void RenderQuad(MViz::Shader& shader, MViz::VA& VAO) {
 		shader.Use();
 		VAO.Bind();
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, (void*)0);
 		VAO.Unbind();
 	}
 
+	void RenderQuad(MViz::VA& VAO, MViz::Shader& shader) {
+		shader.CheckOrtho();
+		shader.Use();
+		VAO.Bind();
+		glDrawArrays(GL_TRIANGLES, 0, 6);
+		VAO.Unbind();
+	}
 }

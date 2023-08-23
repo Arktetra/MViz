@@ -9,7 +9,7 @@ namespace MViz {
 	class Window {
 		GLFWwindow* window;
 	public:
-		Window(int width, int height, const char* title);
+		Window(float width, float height, const char* title);
 		GLFWwindow* GetWindow() {
 			return window;
 		}

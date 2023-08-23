@@ -71,6 +71,20 @@ namespace MViz {
 		glUseProgram(programID);
 	}
 
+	void Shader::Orthogonalize(float width, float height) {
+		IsOrtho = true;
+		glm::mat4 projection = glm::ortho(0.0f, width, 0.0f, height);
+		Use();
+		glUniformMatrix4fv(glGetUniformLocation(GetProgramID(), "projection"), 1, GL_FALSE, glm::value_ptr(projection));
+	}
+
+	void Shader::CheckOrtho() {
+		if (!IsOrtho) {
+			std::cout << "SHADER::ERROR::Unorthogonalized!" << std::endl;
+			abort();
+		}
+	}
+
 	void Shader::Delete() {
 		glDeleteProgram(programID);
 	}

@@ -139,6 +139,7 @@
     <ClCompile Include="src\Renderer\Renderer.cpp" />
     <ClCompile Include="src\Renderer\Shader.cpp" />
     <ClCompile Include="src\Renderer\VertexArray.cpp" />
+    <ClCompile Include="src\UI\Widgets.cpp" />
     <ClCompile Include="src\updates.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -148,9 +149,13 @@
     <ClInclude Include="src\Renderer\Renderer.h" />
     <ClInclude Include="src\Renderer\Shader.h" />
     <ClInclude Include="src\Renderer\VertexArray.h" />
+    <ClInclude Include="src\UI\Widgets.h" />
+    <ClInclude Include="src\Utils\Utils.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="res\shaders\frag.shader" />
+    <None Include="res\shaders\ofrag.shader" />
+    <None Include="res\shaders\over.shader" />
     <None Include="res\shaders\text.fs" />
     <None Include="res\shaders\text.vs" />
     <None Include="res\shaders\ver.shader" />
