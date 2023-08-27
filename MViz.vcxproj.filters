@@ -76,5 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Font Include="res\fonts\BRADHITC.TTF" />
+    <Font Include="res\fonts\SansSerifCollection.ttf" />
+    <Font Include="res\fonts\REFSAN.TTF" />
   </ItemGroup>
 </Project>

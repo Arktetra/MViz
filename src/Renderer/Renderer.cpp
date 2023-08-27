@@ -48,11 +48,12 @@ namespace MViz {
 		VAO.Unbind();
 	}
 
-	void RenderQuad(MViz::VA& VAO, MViz::Shader& shader) {
+	void RenderQuad(MViz::VA& VAO, MViz::Shader& shader, type t) {
 		shader.CheckOrtho();
 		shader.Use();
 		VAO.Bind();
-		glDrawArrays(GL_TRIANGLES, 0, 6);
+		if (t == vertices) { glDrawArrays(GL_TRIANGLES, 0, 6); }
+		if (t == indices) { glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, (void*)0); }
 		VAO.Unbind();
 	}
 }

@@ -14,7 +14,6 @@ namespace MViz {
 		glAttachShader(programID, fs);
 		glLinkProgram(programID);
 		glValidateProgram(programID);
-		std::cout << "\n" << programID;
 
 		glDeleteProgram(vs);
 		glDeleteProgram(fs);
@@ -50,7 +49,6 @@ namespace MViz {
 	}
 
 	unsigned int Shader::GetProgramID() {
-		std::cout << "\n" << programID;
 		return programID;
 	}
 
@@ -67,7 +65,6 @@ namespace MViz {
 	}
 
 	void Shader::Use() {
-		std::cout << "\nUsed";
 		glUseProgram(programID);
 	}
 
